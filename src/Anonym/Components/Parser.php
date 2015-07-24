@@ -11,6 +11,10 @@
     use Symfony\Component\Console\Input\InputArgument;
     use Symfony\Component\Console\Input\InputOption;
 
+    /**
+     * Class Parser
+     * @package Anonym\Components\Console
+     */
     class Parser
     {
 

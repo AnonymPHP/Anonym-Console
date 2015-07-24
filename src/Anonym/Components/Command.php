@@ -10,6 +10,10 @@
     use Symfony\Component\Console\Output\OutputInterface;
     use Symfony\Component\Console\Question\ChoiceQuestion;
 
+    /**
+     * Class Command
+     * @package Anonym\Components\Console
+     */
     class Command extends SymfonyCommand
     {
 

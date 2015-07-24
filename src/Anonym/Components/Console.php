@@ -14,6 +14,10 @@
     use Symfony\Component\Console\Input\InputInterface;
     use Symfony\Component\Console\Input\InputOption;
 
+    /**
+     * Class Console
+     * @package Anonym\Components\Console
+     */
     class Console extends SymfonyConsole
     {
 
