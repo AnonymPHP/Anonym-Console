@@ -5,8 +5,6 @@
      */
 
     namespace Anonym\Components\Console;
-
-    use Anonym\Anonym;
     use Symfony\Component\Console\Application as SymfonyConsole;
     use Symfony\Component\Console\Output\BufferedOutput;
     use Symfony\Component\Console\Output\OutputInterface;

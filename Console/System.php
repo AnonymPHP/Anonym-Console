@@ -3,8 +3,8 @@
      * @author vahitserifsaglam <vahit.serif119@gmail.com>
      * @copyright AnonymMedya, 2015
      */
-    namespace Anonym\Console;
-
+    namespace Console;
+    use Console\Commands\Test;
     /**
      * Class System
      * @package Application\Console
@@ -16,7 +16,6 @@
          * @var array
          */
         protected $commands = [
-
-            //
+            Test::class,
         ];
     }

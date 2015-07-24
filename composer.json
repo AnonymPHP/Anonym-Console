@@ -28,7 +28,7 @@
   "autoload": {
     "psr-4": {
       "Anonym\\Components\\Console\\": "src/Anonym/Components/",
-      "Anonym\\Console\\":"src/Anonym/Console"
+      "Console\\":"Console/"
     }
   }
 }

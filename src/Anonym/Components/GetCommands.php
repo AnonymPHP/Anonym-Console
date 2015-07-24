@@ -6,8 +6,7 @@
 
     namespace Anonym\Components\Console;
 
-    use Anonym\Console\System;
-
+    use Console\System;
     /**
      * Class CommandsManager
      * @package Anonym\Console
