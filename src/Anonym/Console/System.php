@@ -1,16 +1,22 @@
 <?php
     /**
-     * Bu Dosya AnonymFramework'e ait bir dosyadır.
-     *
      * @author vahitserifsaglam <vahit.serif119@gmail.com>
-     * @see http://gemframework.com
-     *
+     * @copyright AnonymMedya, 2015
      */
-
     namespace Anonym\Console;
 
-
-    class System
+    /**
+     * Class System
+     * @package Application\Console
+     */
+    abstract class System
     {
+        /**
+         * Bu Kısıma eklediğiniz sınıflar birer komut olarak algılanacaktır
+         * @var array
+         */
+        protected $commands = [
 
+            //
+        ];
     }
