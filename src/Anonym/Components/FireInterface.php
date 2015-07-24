@@ -6,7 +6,6 @@
 
     namespace Anonym\Components\Console;
 
-
     use Symfony\Component\Console\Output\OutputInterface;
     use Symfony\Component\Console\Input\InputInterface;
 
