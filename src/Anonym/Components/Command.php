@@ -66,6 +66,7 @@
 
         public function __construct()
         {
+
             if (isset($this->signature)) {
                 $this->registerSignature();
             } else {
