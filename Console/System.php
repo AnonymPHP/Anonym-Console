@@ -4,7 +4,6 @@
      * @copyright AnonymMedya, 2015
      */
     namespace Console;
-    use Console\Commands\Test;
     /**
      * Class System
      * @package Application\Console
@@ -16,6 +15,6 @@
          * @var array
          */
         protected $commands = [
-            Test::class,
+
         ];
     }
