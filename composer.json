@@ -2,17 +2,11 @@
   "name": "anonym-php/anonym-console",
   "type": "library",
   "keywords": [
-    "upload"
+    "console"
   ],
   "homepage": "https://gemframework.com",
-  "description": "AnonymFramework Crypt Component",
+  "description": "AnonymFramework Comsole Component",
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git://github.com/AnonymPHP/Anonym-Console.git"
-    }
-  ],
   "minimum-stability": "dev",
   "authors": [
     {
