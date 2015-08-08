@@ -7,7 +7,7 @@ inceleyebilirsiniz.
 Autoload olayının aktifleşmesi için composer de autoload psr 4 kısmına aşağıyı eklemeniz gerek
 
 ```json
-"Console\\":"path"
+"Console\\" : "path"
 ```
 
 
