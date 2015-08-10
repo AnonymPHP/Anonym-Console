@@ -21,10 +21,7 @@
          * @var BufferedOutput
          */
         private $lastOutput;
-        /**
-         * @var int
-         */
-        private $version;
+
 
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
@@ -33,7 +30,7 @@
         public function __construct($version = 1)
         {
 
-            $this->version = $version;
+            $this->setVersion($version);
             $this->setAutoExit(false);
             $this->setCatchExceptions(false);
             parent::__construct('AnonymFrameworkConsole', $version);
@@ -112,4 +109,5 @@
             $message = 'The environment the command should run under.';
             return new InputOption('--env', null, InputOption::VALUE_OPTIONAL, $message);
         }
+
     }

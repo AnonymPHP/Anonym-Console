@@ -19,7 +19,7 @@
          * Bu Kısıma eklediğiniz sınıflar birer komut olarak algılanacaktır
          * @var array
          */
-        private $commands = [
+        protected $commands = [
             //
         ];
 

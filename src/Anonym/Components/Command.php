@@ -258,6 +258,4 @@
             $question->setMaxAttempts($attempts)->setMultiselect($multiple);
             return $this->output->askQuestion($question);
         }
-
-
     }
