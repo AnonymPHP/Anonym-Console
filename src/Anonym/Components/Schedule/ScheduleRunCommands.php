@@ -43,7 +43,7 @@ class ScheduleRunCommands extends Command
     private $schedule;
 
     /**
-     *
+     * create a new instance and register schedule instance to $schedule variable
      */
     public function __construct()
     {
@@ -55,7 +55,14 @@ class ScheduleRunCommands extends Command
      */
     public function handle()
     {
+        $schedule = $this->schedule;
 
+        $events = $schedule->dueEvents(EventReposity::getEvents());
+
+        foreach($events as $event)
+        {
+            $event->execute();
+        }
 
     }
 }
