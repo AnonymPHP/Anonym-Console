@@ -6,6 +6,7 @@
 
     namespace Anonym\Components\Console;
 
+    use Anonym\Components\Cron\Cron;
     use Console\System;
     /**
      * Class CommandsManager
@@ -27,9 +28,15 @@
             $this->resolveSchedule();
         }
 
+        /**
+         *  resolve the schude
+         */
         private function resolveSchedule()
         {
-
+            if(method_exists($this, 'schedule'))
+            {
+                call_user_func([$this, 'schedule'], new Cron());
+            }
         }
         /**
          * @param array $commands
