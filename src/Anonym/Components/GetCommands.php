@@ -23,8 +23,14 @@
             if (count($commands) > 0) {
                 $this->setCommands($commands);
             }
+
+            $this->resolveSchedule();
         }
 
+        private function resolveSchedule()
+        {
+
+        }
         /**
          * @param array $commands
          * @return $this
