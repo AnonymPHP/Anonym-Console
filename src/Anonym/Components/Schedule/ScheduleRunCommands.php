@@ -59,6 +59,11 @@ class ScheduleRunCommands extends Command
 
         $events = $schedule->dueEvents(EventReposity::getEvents());
 
+        if (!count($events)) {
+            $this->error('There isnt any event from schedule');
+            return false;
+        }
+
         foreach($events as $event)
         {
             $event->execute();
