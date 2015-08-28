@@ -38,6 +38,10 @@
 
         }
 
+        private function addDefaultCommands()
+        {
+
+        }
         /**
          *  resolve the schude
          */
