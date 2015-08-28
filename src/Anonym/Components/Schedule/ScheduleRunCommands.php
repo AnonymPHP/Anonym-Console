@@ -12,7 +12,10 @@
 namespace Anonym\Components\Console\Schedule;
 
 
-class ScheduleRunCommands
+use Anonym\Components\Console\Command;
+use Anonym\Components\Console\HandleInterface;
+
+class ScheduleRunCommands extends Command implements HandleInterface
 {
 
 }
