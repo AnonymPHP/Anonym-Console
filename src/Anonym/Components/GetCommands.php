@@ -15,7 +15,12 @@
     class GetCommands extends System
     {
 
-
+        /**
+         * the list of default console commands
+         *
+         * @var array
+         */
+        private $defaultCommands = [];
         /**
          * @param array $commands
          */
@@ -26,6 +31,7 @@
             }
 
             $this->resolveSchedule();
+
         }
 
         /**
