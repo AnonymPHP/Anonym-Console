@@ -38,9 +38,15 @@
 
         }
 
+        /**
+         * add default commands to command reposity
+         */
         private function addDefaultCommands()
         {
-
+            foreach($this->defaultCommands as $command)
+            {
+                $this->addCommand($command);
+            }
         }
         /**
          *  resolve the schude
