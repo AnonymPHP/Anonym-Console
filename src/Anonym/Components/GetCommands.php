@@ -30,6 +30,10 @@
                 $this->setCommands($commands);
             }
 
+            if (count($this->defaultCommands)) {
+                $this->addDefaultCommands();
+            }
+
             $this->resolveSchedule();
 
         }
