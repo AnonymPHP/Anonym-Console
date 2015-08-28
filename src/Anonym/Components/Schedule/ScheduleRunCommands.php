@@ -21,6 +21,20 @@ class ScheduleRunCommands extends Command
 {
 
     /**
+     * signature of command
+     *
+     * @var string
+     */
+    protected $name = 'schedule:run';
+
+    /**
+     * description of command
+     *
+     * @var string
+     */
+    protected $description = 'Run the scheduled commands';
+
+    /**
      * Komut yakalandığı zaman tetiklenecek fonksiyonlardan biridir
      * @return mixed
      */
