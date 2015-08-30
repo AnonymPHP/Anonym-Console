@@ -11,12 +11,9 @@
 
 namespace Anonym\Components\Console\Schedule;
 
-
+use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Console\Command;
-use Anonym\Components\Console\HandleInterface;
 use Anonym\Components\Cron\Cron;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputInterface;
 
 class ScheduleRunCommands extends Command
 {
