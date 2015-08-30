@@ -47,6 +47,7 @@ class ScheduleRunCommands extends Command
      */
     public function __construct()
     {
+        parent::__construct();
         $this->schedule = new Cron();
     }
     /**
