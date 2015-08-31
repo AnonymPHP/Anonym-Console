@@ -5,6 +5,7 @@
      */
 
     namespace Anonym\Components\Console;
+    use Anonym\Components\Cron\Cron;
     use Symfony\Component\Console\Command\Command as SymfonyCommand;
     use Symfony\Component\Console\Input\InputInterface;
     use Symfony\Component\Console\Output\OutputInterface;
@@ -65,13 +66,15 @@
          *
          * @var Cron
          */
-        public $schedule;
+        private $schedule;
+
         /**
          *  Başlatıcı fonksiyon, ismi ve açıklamaların ayarlamasını yapar
          */
-
-        public function __construct()
+        public function __construct(Cron $schedule = null)
         {
+
+            $this->schedule = $schedule;
 
             if (isset($this->signature)) {
                 $this->registerSignature();
