@@ -6,6 +6,7 @@
 
     namespace Anonym\Components\Console;
     use Symfony\Component\Console\Application as SymfonyConsole;
+    use Anonym\Components\Console\Schedule\ScheduleRunCommands;
     use Symfony\Component\Console\Output\BufferedOutput;
     use Symfony\Component\Console\Input\ArrayInput;
     use Symfony\Component\Console\Input\InputOption;
@@ -44,7 +45,9 @@
          *
          * @var array
          */
-        protected $kernel;
+        protected $kernel = [
+
+        ];
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
          * @param int $version
