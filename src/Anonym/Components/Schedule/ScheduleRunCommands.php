@@ -49,6 +49,7 @@ class ScheduleRunCommands extends Command
 
         parent::__construct();
     }
+
     /**
      * Komut yakalandığı zaman tetiklenecek fonksiyonlardan biridir
      * @return mixed
@@ -64,16 +65,13 @@ class ScheduleRunCommands extends Command
             return false;
         }
 
-        foreach($events as $event)
-        {
+        foreach ($events as $event) {
 
             if ($event instanceof TaskReposity) {
                 $this->info(sprintf('%s Command is Runnig', $event->getSummaryForDescription()));
 
-            $event->execute();
+                $event->execute();
             }
-
-
         }
     }
 }
