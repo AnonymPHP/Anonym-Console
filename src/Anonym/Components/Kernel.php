@@ -5,6 +5,7 @@
      */
 
     namespace Anonym\Components\Console;
+    use Anonym\Components\Cron\EventReposity;
     use Symfony\Component\Console\Application as SymfonyConsole;
     use Anonym\Components\Console\Schedule\ScheduleRunCommands;
     use Symfony\Component\Console\Output\BufferedOutput;
@@ -57,6 +58,9 @@
             $this->resolveCommands();
             static::$schedule = $schedule = new Cron();
             $this->schedule($schedule);
+
+            static::$schedule->setCache(EventReposity::getEvents());
+
             $this->runParentClass($version);
 
         }
