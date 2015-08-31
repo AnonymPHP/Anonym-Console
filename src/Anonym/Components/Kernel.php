@@ -29,15 +29,22 @@
          *
          * @var Cron
          */
-        private $schedule;
+        private static $schedule;
 
         /**
-         * an array of types
+         * an array for commands
          *
          * @var array
          */
         protected $commands;
 
+
+        /**
+         * an array for default commands
+         *
+         * @var array
+         */
+        protected $kernel;
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
          * @param int $version
@@ -48,19 +55,22 @@
             $this->setAutoExit(false);
             $this->setCatchExceptions(false);
             $this->resolveCommands();
-
-
+            static::$schedule = $schedule = new Cron();
+            $this->schedule($schedule);
 
             parent::__construct('AnonymFrameworkConsole', $version);
         }
 
+
         /**
-         * Tüm Komutları sınıfa ekle
+         * resolve the commands
          *
          */
         protected function resolveCommands()
         {
-            foreach ($this->commands as $command) {
+            $this->commands = $commands = array_merge($this->kernel, $this->commands);
+
+            foreach ($commands as $command) {
                 $command = new $command();
                 $this->addToParent($command);
             }
