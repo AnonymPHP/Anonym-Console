@@ -61,6 +61,12 @@
         protected $Anonym;
 
         /**
+         * the instance of schedule
+         *
+         * @var Cron
+         */
+        public $schedule;
+        /**
          *  Başlatıcı fonksiyon, ismi ve açıklamaların ayarlamasını yapar
          */
 
