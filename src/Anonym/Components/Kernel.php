@@ -46,7 +46,7 @@
          * @var array
          */
         protected $kernel = [
-
+            ScheduleRunCommands::class
         ];
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
@@ -54,16 +54,24 @@
          */
         public function __construct($version = 1)
         {
-
-            $this->setAutoExit(false);
-            $this->setCatchExceptions(false);
             $this->resolveCommands();
             static::$schedule = $schedule = new Cron();
             $this->schedule($schedule);
+            $this->runParentClass($version);
 
-            parent::__construct('AnonymFrameworkConsole', $version);
         }
 
+        /**
+         * execute parent class
+         *
+         * @param int $version
+         */
+        private function runParentClass($version)
+        {
+            $this->setAutoExit(false);
+            $this->setCatchExceptions(false);
+            parent::__construct('Anonym', $version);
+        }
 
         /**
          * resolve the commands
