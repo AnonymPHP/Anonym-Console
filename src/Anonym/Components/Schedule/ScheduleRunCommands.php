@@ -14,6 +14,7 @@ namespace Anonym\Components\Console\Schedule;
 use Anonym\Components\Cron\Cron as Schedule;
 use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Console\Command;
+use Anonym\Components\Cron\Task\TaskReposity;
 
 class ScheduleRunCommands extends Command
 {
@@ -65,8 +66,14 @@ class ScheduleRunCommands extends Command
 
         foreach($events as $event)
         {
-            $event->execute();
-        }
 
+            if ($event instanceof TaskReposity) {
+                $this->info(sprintf('%s Command is Runnig', $event->getSummaryForDescription()));
+
+            $event->execute();
+            }
+
+
+        }
     }
 }
