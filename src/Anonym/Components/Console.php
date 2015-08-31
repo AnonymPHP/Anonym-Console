@@ -14,7 +14,7 @@
      * Class Console
      * @package Anonym\Components\Console
      */
-    class Console extends SymfonyConsole
+    class Kernel extends SymfonyConsole
     {
 
         /**
@@ -23,6 +23,8 @@
         private $lastOutput;
 
 
+        private $schedule;
+
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
          * @param int $version
@@ -30,26 +32,23 @@
         public function __construct($version = 1)
         {
 
-            $this->setVersion($version);
             $this->setAutoExit(false);
             $this->setCatchExceptions(false);
+            $this->resolveCommands();
+
             parent::__construct('AnonymFrameworkConsole', $version);
-            $this->addCommandsToParent(new GetCommands());
         }
 
         /**
-         * Tüm Komutları sınıfa ekler
-         * @param GetCommands $commands
+         * Tüm Komutları sınıfa ekle
+         *
          */
-        public function addCommandsToParent(GetCommands $commands)
+        protected function resolveCommands()
         {
-
-
-            foreach ($commands->getCommands() as $command) {
+            foreach ($this->commands as $command) {
                 $command = new $command();
                 $this->addToParent($command);
             }
-
         }
 
 
