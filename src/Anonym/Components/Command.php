@@ -61,20 +61,13 @@
          */
         protected $Anonym;
 
-        /**
-         * the instance of schedule
-         *
-         * @var Cron
-         */
-        private $schedule;
 
         /**
          *  Başlatıcı fonksiyon, ismi ve açıklamaların ayarlamasını yapar
          */
-        public function __construct(Cron $schedule = null)
+        public function __construct()
         {
 
-            $this->schedule = $schedule;
 
             if (isset($this->signature)) {
                 $this->registerSignature();
