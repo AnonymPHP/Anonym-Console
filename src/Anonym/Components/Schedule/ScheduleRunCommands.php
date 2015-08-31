@@ -56,7 +56,7 @@ class ScheduleRunCommands extends Command
     {
         $schedule = $this->schedule;
 
-        $events = $schedule->dueEvents($schedule->getEvents(););
+        $events = $schedule->dueEvents($schedule->getEvents());
 
         if (!count($events)) {
             $this->error('There isnt any event from schedule');
