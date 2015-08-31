@@ -9,6 +9,7 @@
     use Symfony\Component\Console\Output\BufferedOutput;
     use Symfony\Component\Console\Input\ArrayInput;
     use Symfony\Component\Console\Input\InputOption;
+    use Anonym\Components\Cron\Cron;
 
     /**
      * Class Console
@@ -23,7 +24,19 @@
         private $lastOutput;
 
 
+        /**
+         * the instance of cron
+         *
+         * @var Cron
+         */
         private $schedule;
+
+        /**
+         * an array of types
+         *
+         * @var array
+         */
+        protected $commands;
 
         /**
          * Sınıfı başlatır ve bazı atamaları gerçekleştirir
@@ -35,6 +48,8 @@
             $this->setAutoExit(false);
             $this->setCatchExceptions(false);
             $this->resolveCommands();
+
+
 
             parent::__construct('AnonymFrameworkConsole', $version);
         }
