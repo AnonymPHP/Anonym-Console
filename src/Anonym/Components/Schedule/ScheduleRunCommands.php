@@ -35,26 +35,28 @@ class ScheduleRunCommands extends Command
     /**
      * the instance of cron
      *
-     * @var Cron
+     * @var Schedule
      */
     protected $schedule;
 
     /**
      * create a new instance and register schedule instance to $schedule variable
      */
-    public function __construct()
+    public function __construct(Schedule $schedule = null)
     {
+        $this->schedule = $schedule;
+
         parent::__construct();
     }
     /**
      * Komut yakalandığı zaman tetiklenecek fonksiyonlardan biridir
      * @return mixed
      */
-    public function handle()
+    public function fire()
     {
         $schedule = $this->schedule;
 
-        $events = $schedule->dueEvents(EventReposity::getEvents());
+        $events = $schedule->dueEvents($schedule->getEvents(););
 
         if (!count($events)) {
             $this->error('There isnt any event from schedule');
