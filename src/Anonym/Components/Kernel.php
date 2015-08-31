@@ -82,7 +82,10 @@
             $this->commands = $commands = array_merge($this->kernel, $this->commands);
 
             foreach ($commands as $command) {
-                $command = new $command();
+
+                $schedule = $command === ScheduleRunCommands::class ? static::$schedule : null;
+
+                $command = new $command($schedule);
                 $this->addToParent($command);
             }
         }
