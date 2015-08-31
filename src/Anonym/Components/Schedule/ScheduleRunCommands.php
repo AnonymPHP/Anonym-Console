@@ -11,9 +11,9 @@
 
 namespace Anonym\Components\Console\Schedule;
 
+use Anonym\Components\Cron\Cron as Schedule;
 use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Console\Command;
-use Anonym\Components\Cron\Cron;
 
 class ScheduleRunCommands extends Command
 {
@@ -37,7 +37,7 @@ class ScheduleRunCommands extends Command
      *
      * @var Cron
      */
-    private $schedule;
+    protected $schedule;
 
     /**
      * create a new instance and register schedule instance to $schedule variable
