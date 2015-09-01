@@ -10,6 +10,8 @@
 
 
 namespace Anonym\Components\Console\Schedule;
+use Anonym\Components\Console\Command;
+use Anonym\Components\Cron\Cron as Schedule;
 
 class ScheduleCleanCommands extends Command
 {
@@ -19,14 +21,14 @@ class ScheduleCleanCommands extends Command
      *
      * @var string
      */
-    protected $name = 'schedule:run';
+    protected $name = 'schedule:clean';
 
     /**
      * description of command
      *
      * @var string
      */
-    protected $description = 'Run the scheduled commands';
+    protected $description = 'clean the scheduled commands';
 
     /**
      * the instance of cron
@@ -52,5 +54,7 @@ class ScheduleCleanCommands extends Command
     public function fire()
     {
 
+        // clean the all commands
+        $this->schedule->clean();
     }
-    }
+}
