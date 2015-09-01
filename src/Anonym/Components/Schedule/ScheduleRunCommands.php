@@ -47,7 +47,7 @@ class ScheduleRunCommands extends Command
     public function __construct(Schedule $schedule = null)
     {
         $this->schedule = $schedule;
-        $this->schedule->install(Task::console('schedule:run', BASE));
+        $this->schedule->install(Task::console('schedule:run'));
         parent::__construct();
     }
 
