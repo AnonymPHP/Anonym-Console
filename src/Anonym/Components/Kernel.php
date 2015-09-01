@@ -31,7 +31,7 @@
          *
          * @var Cron
          */
-        private static $schedule;
+        protected static $schedule;
 
         /**
          * an array for commands
@@ -55,10 +55,10 @@
          */
         public function __construct($version = 1)
         {
-            $this->resolveCommands();
             static::$schedule = $schedule = new Cron();
-            $this->schedule($schedule);
 
+            $this->resolveCommands();
+            $this->schedule($schedule);
             static::$schedule->setCache(EventReposity::getEvents());
 
             $this->runParentClass($version);
@@ -73,7 +73,7 @@
         private function runParentClass($version)
         {
             $this->setAutoExit(false);
-            $this->setCatchExceptions(false);
+            $this->setCatchExceptions(true);
             parent::__construct('Anonym', $version);
         }
 
