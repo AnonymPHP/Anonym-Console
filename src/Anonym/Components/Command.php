@@ -61,6 +61,12 @@
          */
         protected $Anonym;
 
+        /**
+         * the instance of cron tab manager
+         *
+         * @var Cron
+         */
+        protected $schedule;
 
         /**
          *  Başlatıcı fonksiyon, ismi ve açıklamaların ayarlamasını yapar
