@@ -53,8 +53,9 @@ class ScheduleCleanCommands extends Command implements ScheduleInterface
      */
     public function fire()
     {
-
         // clean the all commands
         $this->schedule->clean();
+
+        $this->info('all commands  cleaned');
     }
 }
