@@ -14,6 +14,7 @@ namespace Anonym\Components\Console\Schedule;
 use Anonym\Components\Cron\Cron as Schedule;
 use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Console\Command;
+use Anonym\Components\Cron\Task\Task;
 use Anonym\Components\Cron\Task\TaskReposity;
 
 class ScheduleRunCommands extends Command
@@ -46,7 +47,7 @@ class ScheduleRunCommands extends Command
     public function __construct(Schedule $schedule = null)
     {
         $this->schedule = $schedule;
-
+        $this->schedule->install(Task::console('schedule:run', BASE));
         parent::__construct();
     }
 
