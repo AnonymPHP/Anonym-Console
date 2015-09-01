@@ -6,12 +6,12 @@
 
 namespace Anonym\Components\Console;
 
-use Anonym\Components\Cron\EventReposity;
 use Symfony\Component\Console\Application as SymfonyConsole;
 use Anonym\Components\Console\Schedule\ScheduleRunCommands;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\ArrayInput;
+use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Cron\Cron;
 
 /**
