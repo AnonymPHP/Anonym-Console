@@ -13,7 +13,7 @@ namespace Anonym\Components\Console\Schedule;
 use Anonym\Components\Console\Command;
 use Anonym\Components\Cron\Cron as Schedule;
 
-class ScheduleCleanCommands extends Command
+class ScheduleCleanCommands extends Command implements ScheduleInterface
 {
 
     /**

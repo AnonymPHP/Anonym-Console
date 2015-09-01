@@ -17,7 +17,7 @@ use Anonym\Components\Console\Command;
 use Anonym\Components\Cron\Task\Task;
 use Anonym\Components\Cron\Task\TaskReposity;
 
-class ScheduleRunCommands extends Command
+class ScheduleRunCommands extends Command implements ScheduleInterface
 {
 
     /**
