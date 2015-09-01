@@ -11,8 +11,11 @@
 
 namespace Anonym\Components\Console\Schedule;
 
-
+/**
+ * Interface ScheduleInterface
+ * @package Anonym\Components\Console\Schedule
+ */
 interface ScheduleInterface
 {
-
+    // do nothing
 }
