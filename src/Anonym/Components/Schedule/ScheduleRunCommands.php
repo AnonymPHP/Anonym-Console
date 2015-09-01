@@ -70,7 +70,7 @@ class ScheduleRunCommands extends Command implements ScheduleInterface
         foreach ($events as $event) {
 
             if ($event instanceof TaskReposity) {
-                $this->info(sprintf('%s Command is Runnig', $event->getCommand()));
+                $this->info(sprintf('%s Command is Runnig', $event->getSummaryForDescription()));
 
                 $event->execute();
             }
