@@ -62,13 +62,14 @@ class ScheduleRunCommands extends Command
 
         if (!count($events)) {
             $this->error('There isnt any event from schedule');
+
             return false;
         }
 
         foreach ($events as $event) {
 
             if ($event instanceof TaskReposity) {
-                $this->info(sprintf('%s Command is Runnig', $event->getSummaryForDescription()));
+                $this->info(sprintf('%s Command is Runnig', $event->getCommand()));
 
                 $event->execute();
             }
