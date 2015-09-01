@@ -6,6 +6,7 @@
 
 namespace Anonym\Components\Console;
 
+use Anonym\Components\Console\Schedule\ScheduleCleanCommands;
 use Symfony\Component\Console\Application as SymfonyConsole;
 use Anonym\Components\Console\Schedule\ScheduleRunCommands;
 use Symfony\Component\Console\Output\BufferedOutput;
@@ -49,6 +50,7 @@ class Kernel extends SymfonyConsole
      */
     protected $kernel = [
         ScheduleRunCommands::class,
+        ScheduleCleanCommands::class,
     ];
 
     /**
