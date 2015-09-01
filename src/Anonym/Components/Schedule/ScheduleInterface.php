@@ -12,7 +12,7 @@
 namespace Anonym\Components\Console\Schedule;
 
 
-class ScheduleInterface
+interface ScheduleInterface
 {
 
 }
