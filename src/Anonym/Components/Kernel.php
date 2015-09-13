@@ -41,7 +41,7 @@ class Kernel extends SymfonyConsole
      *
      * @var array
      */
-    protected $commands;
+    protected $commands = [];
 
 
     /**
@@ -67,6 +67,7 @@ class Kernel extends SymfonyConsole
      */
     public function __construct(Container $container, $version = 1)
     {
+
         $this->setContainer($container);
         $this->runParentClass($version);
         static::$schedule = $schedule = new Cron();
@@ -118,6 +119,7 @@ class Kernel extends SymfonyConsole
      */
     public function call($command, array $params = [])
     {
+
         $params['commands'] = $params;
         $this->lastOutput = new BufferedOutput();
 
