@@ -100,9 +100,7 @@ class Kernel extends SymfonyConsole
 
         foreach ($commands as $command) {
 
-            $schedule = ($command === ScheduleRunCommands::class ||  $command === ScheduleCleanCommands::class) ? static::$schedule : null;
-
-            $command = new $command($schedule);
+            $command = $this->getContainer()->make($command);
             $this->addToParent($command);
         }
     }
