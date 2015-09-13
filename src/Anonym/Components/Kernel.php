@@ -14,6 +14,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\ArrayInput;
 use Anonym\Components\Cron\EventReposity;
 use Anonym\Components\Cron\Cron;
+use Illuminate\Contracts\Container\Container;
 
 /**
  * Class Console
@@ -44,6 +45,13 @@ class Kernel extends SymfonyConsole
 
 
     /**
+     * the instance of laravel container
+     *
+     * @var Container
+     */
+    protected $container;
+
+    /**
      * an array for default commands
      *
      * @var array
@@ -57,7 +65,7 @@ class Kernel extends SymfonyConsole
      * Sınıfı başlatır ve bazı atamaları gerçekleştirir
      * @param int $version
      */
-    public function __construct($version = 1)
+    public function __construct(Container $container, $version = 1)
     {
         $this->runParentClass($version);
         static::$schedule = $schedule = new Cron();
