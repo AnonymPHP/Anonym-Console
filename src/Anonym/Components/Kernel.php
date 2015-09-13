@@ -119,8 +119,7 @@ class Kernel extends SymfonyConsole
      */
     public function call($command, array $params = [])
     {
-
-        $params['commands'] = $params;
+        $params['command'] = $command;
         $this->lastOutput = new BufferedOutput();
 
         return $this->find($command)->run(new ArrayInput($params), $this->lastOutput);
