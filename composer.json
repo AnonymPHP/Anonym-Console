@@ -18,7 +18,8 @@
   "require": {
     "php": ">=5.4.0",
     "symfony/console": "2.7.*",
-    "anonym-php/cron": "~1.2@dev"
+    "anonym-php/cron": "~1.2@dev",
+    "illuminate/container": "5.2.*"
   },
   "autoload": {
     "psr-4": {
