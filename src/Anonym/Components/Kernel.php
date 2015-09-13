@@ -67,6 +67,7 @@ class Kernel extends SymfonyConsole
      */
     public function __construct(Container $container, $version = 1)
     {
+        $this->setContainer($container);
         $this->runParentClass($version);
         static::$schedule = $schedule = new Cron();
 
@@ -166,5 +167,79 @@ class Kernel extends SymfonyConsole
 
         return new InputOption('--env', null, InputOption::VALUE_OPTIONAL, $message);
     }
+
+
+    /**
+     * @return BufferedOutput
+     */
+    public function getLastOutput()
+    {
+        return $this->lastOutput;
+    }
+
+    /**
+     * @param BufferedOutput $lastOutput
+     * @return Kernel
+     */
+    public function setLastOutput($lastOutput)
+    {
+        $this->lastOutput = $lastOutput;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCommands()
+    {
+        return $this->commands;
+    }
+
+    /**
+     * @param array $commands
+     * @return Kernel
+     */
+    public function setCommands($commands)
+    {
+        $this->commands = $commands;
+        return $this;
+    }
+
+    /**
+     * @return Container
+     */
+    public function getContainer()
+    {
+        return $this->container;
+    }
+
+    /**
+     * @param Container $container
+     * @return Kernel
+     */
+    public function setContainer($container)
+    {
+        $this->container = $container;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getKernel()
+    {
+        return $this->kernel;
+    }
+
+    /**
+     * @param array $kernel
+     * @return Kernel
+     */
+    public function setKernel($kernel)
+    {
+        $this->kernel = $kernel;
+        return $this;
+    }
+
 
 }
