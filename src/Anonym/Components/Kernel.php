@@ -87,6 +87,9 @@ class Kernel extends SymfonyConsole
     {
         $this->setAutoExit(false);
         $this->setCatchExceptions(true);
+
+        // now we will register applicatio name and version,
+        // application name by default is Anonym.
         parent::__construct('Anonym', $version);
     }
 
