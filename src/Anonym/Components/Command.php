@@ -10,6 +10,7 @@
     use Symfony\Component\Console\Input\InputInterface;
     use Symfony\Component\Console\Output\OutputInterface;
     use Symfony\Component\Console\Question\ChoiceQuestion;
+    use Illuminate\Container\Container;
 
     /**
      * Class Command
@@ -69,6 +70,11 @@
         protected $schedule;
 
         /**
+         * @var Container
+         */
+        protected $container;
+
+        /**
          *  Başlatıcı fonksiyon, ismi ve açıklamaların ayarlamasını yapar
          */
         public function __construct()
@@ -82,6 +88,7 @@
             }
             $this->setDescription($this->description);
         }
+
 
         /**
          * İsim ve parametreleri kayıt eder
@@ -268,4 +275,24 @@
             $question->setMaxAttempts($attempts)->setMultiselect($multiple);
             return $this->output->askQuestion($question);
         }
+
+        /**
+         * @return Container
+         */
+        public function getContainer()
+        {
+            return $this->container;
+        }
+
+        /**
+         * @param Container $container
+         * @return Command
+         */
+        public function setContainer(Container $container)
+        {
+            $this->container = $container;
+            return $this;
+        }
+
+
     }

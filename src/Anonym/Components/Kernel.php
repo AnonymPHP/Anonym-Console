@@ -104,7 +104,7 @@ class Kernel extends SymfonyConsole
 
         foreach ($commands as $command) {
 
-            $command = $this->getContainer()->make($command);
+            $command = $this->getContainer()->make($command)->setContainer($this->getContainer());
             $this->addToParent($command);
         }
     }
