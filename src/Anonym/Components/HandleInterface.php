@@ -8,9 +8,6 @@
     namespace Anonym\Components\Console;
 
 
-    use Symfony\Component\Console\Output\OutputInterface;
-    use Symfony\Component\Console\Input\InputInterface;
-
     /**
      * Interface HandleInterface
      * @package Anonym\Console
@@ -18,10 +15,9 @@
     interface HandleInterface
     {
         /**
-         * Komut yakalandığı zaman tetiklenecek fonksiyonlardan biridir
-         * @param InputInterface $input
-         * @param OutputInterface $output
+         * execute the command
+         *
          * @return mixed
          */
-        public function handle(InputInterface $input, OutputInterface $output);
+        public function handle();
     }
