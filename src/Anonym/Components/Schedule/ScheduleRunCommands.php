@@ -17,7 +17,7 @@ use Anonym\Components\Console\Command;
 use Anonym\Components\Cron\Task\Task;
 use Anonym\Components\Cron\Task\TaskReposity;
 
-class ScheduleRunCommands extends Command implements ScheduleInterface
+class ScheduleRunCommands extends Command
 {
 
     /**
@@ -43,6 +43,8 @@ class ScheduleRunCommands extends Command implements ScheduleInterface
 
     /**
      * create a new instance and register schedule instance to $schedule variable
+     *
+     * @param Schedule $schedule
      */
     public function __construct(Schedule $schedule = null)
     {

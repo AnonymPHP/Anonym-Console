@@ -13,7 +13,7 @@ namespace Anonym\Components\Console\Schedule;
 use Anonym\Components\Console\Command;
 use Anonym\Components\Cron\Cron as Schedule;
 
-class ScheduleCleanCommands extends Command implements ScheduleInterface
+class ScheduleCleanCommands extends Command
 {
 
     /**
@@ -39,6 +39,8 @@ class ScheduleCleanCommands extends Command implements ScheduleInterface
 
     /**
      * create a new instance and register schedule instance to $schedule variable
+     *
+     * @param Schedule $schedule
      */
     public function __construct(Schedule $schedule = null)
     {
