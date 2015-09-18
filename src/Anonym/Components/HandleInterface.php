@@ -6,7 +6,8 @@
      */
 
     namespace Anonym\Components\Console;
-
+    use Symfony\Component\Console\Input\InputInterface;
+    use Symfony\Component\Console\Output\OutputInterface;
 
     /**
      * Interface HandleInterface
@@ -14,10 +15,12 @@
      */
     interface HandleInterface
     {
+
         /**
-         * execute the command
          *
+         * @param InputInterface $input
+         * @param OutputInterface $output
          * @return mixed
          */
-        public function handle();
+        public function handle(InputInterface $input, OutputInterface $output);
     }
